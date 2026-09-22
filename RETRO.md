@@ -1,41 +1,21 @@
 # Retrospective
 
-## 1. Configurarea inițială a proiectului
+1. AI-ul a presupus inițial că pagina de revendicare era ascunsă corect, dar în Unity am observat că ambele pagini puteau fi vizibile.
 
-La început, unele setări și pași pentru Unity nu au fost corecte din prima. Am verificat rezultatul direct în Unity și am corectat configurația.
+2. AI-ul a sugerat configurarea unor referințe UI fără să verifice toate legăturile din Inspector, ceea ce a dus la un NullReferenceException în ConfigLoader.
 
-## 2. Pagina de revendicare
+3. AI-ul nu a anticipat că prima versiune WebGL va porni SampleScene în loc de scena UnitY, iar problema a fost descoperită prin testarea în browser.
 
-Pagina de revendicare nu a fost ascunsă corect la început. Am observat problema în interfața Unity și am corectat starea inițială a obiectului.
+4. AI-ul a oferit inițial soluții pentru culori care nu se potriveau complet cu modul în care ConfigLoader aplica culorile din configurația externă.
 
-## 3. Referințele UI
+5. AI-ul a presupus în anumite momente că o modificare vizuală era suficientă fără verificarea imediată în Unity, dar rezultatul final a trebuit verificat manual.
 
-ConfigLoader a produs un NullReferenceException deoarece unele referințe către elementele UI nu erau asignate. Console-ul Unity a ajutat la identificarea problemei.
+6. AI-ul a trebuit corectat în privința formatului codului de cupon, deoarece prima versiune folosea doar cifre și era prea scurtă.
 
-## 4. Configurația pragurilor
+7. AI-ul a recomandat verificarea și testarea repetată a pragurilor de scor deoarece logica trebuia confirmată cu valori reale în Unity.
 
-Au fost necesare teste cu diferite valori de scor pentru a verifica dacă afișarea cuponului și butonul de revendicare funcționează corect.
+8. AI-ul a trebuit să verifice modificările generate automat de Unity după WebGL Build, deoarece unele fișiere TMP au fost schimbate automat.
 
-## 5. Culorile din configurație
+9. AI-ul a sugerat inițial că modificările Git după build pot fi tratate direct, dar a fost necesară verificarea diff-ului înainte de commit.
 
-Aplicarea culorilor a necesitat verificarea referințelor UI și a configurației. Problema a fost găsită prin testare și corectată în Unity.
-
-## 6. Web Build
-
-Prima versiune Web a pornit scena SampleScene în locul scenei UnitY. Problema a fost identificată în browser și corectată în lista scenelor pentru build.
-
-## 7. Testarea logo-ului
-
-Am verificat schimbarea logo-ului prin modificarea fișierului extern și verificarea rezultatului în Unity și în Web Build.
-
-## 8. Git
-
-Inițial Git nu era instalat și a trebuit instalat și configurat. După aceea proiectul a fost inițializat ca repository și conectat la GitHub.
-
-## 9. Autentificarea GitHub
-
-La primul push, GitHub a cerut autentificare în browser. După autentificare, push-ul a fost finalizat cu succes.
-
-## 10. Lecția principală
-
-AI a fost util pentru ghidare și cod, dar soluțiile nu trebuie acceptate automat. Fiecare etapă importantă trebuie verificată în Unity, Console, browser și Git.
+10. Dacă aș relua proiectul, aș verifica mai devreme scena de build, configurația externă și integrarea WebGL și aș face teste scurte după fiecare etapă importantă.

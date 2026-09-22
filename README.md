@@ -10,9 +10,10 @@ Unity 2D WebGL mini-game pentru un sistem de loialitate.
 
 ## Rulare
 
-1. Clonează repository-ul și deschide proiectul în Unity Hub.
-2. Deschide scena `Assets/UnitY.unity`.
-3. Apasă Play sau construiește proiectul pentru Web.
+1. Clonează repository-ul:
+   `git clone https://github.com/maxim7104/G1-Loyalty-MiniGame.git`
+2. Deschide folderul proiectului în Unity Hub și așteaptă importul proiectului.
+3. Deschide scena `Assets/UnitY.unity` și apasă Play.
 
 ## Configurare local
 
@@ -26,11 +27,16 @@ Logo-ul este în:
 
 Pragul cupoanelor, culorile și logo-ul pot fi schimbate prin fișierul de configurare fără modificarea codului Unity.
 
-## Funcționalitate
+Exemplu de configurație:
 
-La finalul jocului:
-- scorul este afișat;
-- scorul este comparat cu pragurile din configurare;
-- utilizatorul primește reducerea corespunzătoare;
-- dacă există cupon, poate deschide pagina de revendicare;
-- este generat un cod de cupon.
+```json
+{
+  "logo": "logo.png",
+  "primaryColor": "#FF0000",
+  "secondaryColor": "#FFFFFF",
+  "couponThresholds": [
+    { "score": 500, "coupon": "7%" },
+    { "score": 1000, "coupon": "15%" },
+    { "score": 2000, "coupon": "20%" }
+  ]
+}

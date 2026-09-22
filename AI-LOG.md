@@ -22,16 +22,12 @@ Am nevoie să construiesc partea mea dintr-un proiect Unity 2D WebGL pentru un l
 
 3. Prima versiune Web a pornit scena SampleScene în locul scenei UnitY. Problema a fost observată în browser și a fost corectată în Build Profiles / Scene List.
 
-## Ce am scris manual
+## Ce am făcut manual fără AI
 
-Am introdus și modificat manual fișierele de configurare JSON, am testat pragurile de cupoane și am verificat rezultatul în Unity și în browser.
+Am făcut manual configurarea obiectelor din Unity, am asignat elementele UI în Inspector, am verificat aspectul vizual al paginilor, am testat pragurile de scor și am verificat funcționarea build-ului WebGL în browser.
 
-Am configurat manual referințele UI din Inspector și am verificat schimbarea logo-ului și a culorilor din configurația externă.
+Aceste lucruri au fost făcute manual deoarece rezultatul trebuia verificat direct în Unity și în browser, iar AI nu poate confirma singur că interfața și build-ul se comportă corect în proiectul local.
 
-## Ce aș face diferit
+## Ce aș face diferit în primele 10 minute
 
-În primele 10 minute aș verifica mai devreme scena configurată pentru Web Build, referințele UI din Inspector și structura proiectului înainte de a începe testarea în browser.
-
-## Lecția principală
-
-AI a fost util pentru pașii tehnici, dar fiecare rezultat a fost verificat în Unity, Console și browser. Erorile au fost descoperite prin testare, nu presupuse ca fiind corecte doar pentru că soluția a fost sugerată de AI.
+Dacă aș relua proiectul, în primele 10 minute aș verifica mai întâi structura scenei, Build Profiles și modul în care este încărcat config.json. Aș stabili de la început ce obiecte UI trebuie conectate în Inspector și aș face un test WebGL foarte devreme. De asemenea, aș stabili de la început structura documentației și a commit-urilor Git pentru a evita verificările și corectările de la final.
