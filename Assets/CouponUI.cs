@@ -17,6 +17,7 @@ public class CouponUI : MonoBehaviour
     {
         finalPage.SetActive(false);
         claimPage.SetActive(true);
+
         if (couponCodeText != null)
         {
             couponCodeText.text = "COD: " + GenerateCouponCode();
@@ -31,9 +32,12 @@ public class CouponUI : MonoBehaviour
 
     public void SetResult(int score)
     {
-        scoreText.text = "SCORUL TĂU: " + score;
+        // SCOR
+        scoreText.text =
+            "<color=#FFFFFF>Scorul Tău: </color>" +
+            "<color=#FFD42A>" + score + "</color>";
 
-        string coupon = "FĂRĂ CUPON";
+        string coupon = "Fără Cupon";
         int minimumScore = int.MaxValue;
 
         if (ConfigLoader.Config != null &&
@@ -56,12 +60,15 @@ public class CouponUI : MonoBehaviour
 
         if (score < minimumScore)
         {
-            couponText.text = "FĂRĂ CUPON";
+            couponText.text = "Fără Cupon";
             claimButton.SetActive(false);
         }
         else
         {
-            couponText.text = "CUPON CÂȘTIGAT: " + coupon;
+            couponText.text =
+                "<color=#7A2E00>Cupon Câștigat: </color>" +
+                "<color=#7A2E00>" + coupon + "</color>";
+
             claimButton.SetActive(true);
         }
     }
@@ -80,8 +87,20 @@ public class CouponUI : MonoBehaviour
 
         SetResult(1270);
     }
+
     string GenerateCouponCode()
     {
-        return "G1-" + Random.Range(1000, 9999);
+        const string characters = "ABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789";
+
+        string part1 = "";
+        string part2 = "";
+
+        for (int i = 0; i < 4; i++)
+        {
+            part1 += characters[Random.Range(0, characters.Length)];
+            part2 += characters[Random.Range(0, characters.Length)];
+        }
+
+        return "G1-" + part1 + "-" + part2;
     }
 }
