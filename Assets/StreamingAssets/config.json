@@ -1,0 +1,19 @@
+{
+  "logo": "logo.png",
+  "primaryColor": "#FF0000",
+  "secondaryColor": "#FFFFFF",
+  "couponThresholds": [
+    {
+      "score": 500,
+      "coupon": "7%"
+    },
+    {
+      "score": 1000,
+      "coupon": "15%"
+    },
+    {
+      "score": 2000,
+      "coupon": "20%"
+    }
+  ]
+}
